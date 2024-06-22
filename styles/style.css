@@ -69,7 +69,6 @@ fieldset {
   height: 386px;
   width: 711px;
   margin-bottom: 16px;
-  
 }
 
 .result__video{
@@ -87,7 +86,6 @@ fieldset {
 
 .content__details {
   width: 399px;
-  height: 534px;
 }
 
 .search-form__checkbox-list {
@@ -99,16 +97,17 @@ fieldset {
 }
 
 .search-form__label {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: fit-content;
   cursor: pointer;
 }
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 .search-form__label .search-form__pseudo-checkbox {
@@ -141,6 +140,12 @@ fieldset {
   display: block;
 }
 
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  column-gap: 5px;
+}
+
 .search-form__fieldset-title {
   margin-bottom: 5px;
   font-weight: 400;
@@ -148,20 +153,23 @@ fieldset {
 }
 
 .search-form__textfield {
+  width: 225px;
+  min-height: 27px;
   font-family: inherit;
   font-size: inherit;
-  color: #fff;
-  background-color: #1b1919;
+  font-weight: 400;
+  line-height: 21.6px;
+  background: transparent;
   border: none;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  width: 225px;
-  padding: 2.5px 0;
+  border-top: 1px solid whitesmoke;
+  border-bottom: 1px solid white;
+  color: #fff;
   appearance: none;
 }
 
-.search-form__textfield:active {
-  border: 1px solid #fff;
+.search-form__textfield:active{
+  border: none;
+  outline: 1px solid #fff;
 }
 
 .search-form__textfield:focus{
@@ -188,23 +196,24 @@ fieldset {
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .content__card-link {
   display: block;
-  margin: 2px;
+  padding: 2px;
   color: #fff;
   text-decoration: none;
-}
-
-.content__card-link:active {
-  background-color: #545050;
 }
 
 .content__card-link:hover {
   text-decoration: underline;
   text-decoration-skip-ink: none;
+}
+
+.content__card-link:active {
+  text-decoration: none;
+  background-color: #545050;
 }
 
 .content__card-link:focus {
@@ -224,7 +233,7 @@ fieldset {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 100%;
+  line-height: 117%;
   text-transform: uppercase;
   margin-bottom: 6px;
   text-overflow: ellipsis;
@@ -233,7 +242,7 @@ fieldset {
 }
 
 .content__video-card-description {
-  line-height: 90%;
+  line-height: 61%;
 }
 
 .content__video-card {
@@ -245,13 +254,14 @@ fieldset {
 
 .content__video-card-description-container {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
-  max-height: 103px;
-  object-position: left;
-  object-fit: cover
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .button {
@@ -270,13 +280,13 @@ fieldset {
   outline-offset: 1px;
 }
 
+.button:hover {
+  text-decoration: underline;
+}
+
 .button:active {
   text-decoration: none;
   background-color: #545050;
-}
-
-.button:hover {
-  text-decoration: underline;
 }
 
 .search-form__submit-button {
